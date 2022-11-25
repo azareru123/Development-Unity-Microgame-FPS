@@ -95,6 +95,12 @@ namespace Unity.FPS.Gameplay
 
         [Tooltip("Damage recieved when falling at the maximum speed")]
         public float FallDamageAtMaxSpeed = 50f;
+        
+        [Tooltip("Cooldown time to trigger dash again")]
+        public float DashCooldownTime = 0.5f;
+        
+        [Tooltip("Move multiplier when dashing")]
+        public float DashMultiplier = 5.0f;
 
         public UnityAction<bool> OnStanceChanged;
 
@@ -129,6 +135,7 @@ namespace Unity.FPS.Gameplay
         float m_CameraVerticalAngle = 0f;
         float m_FootstepDistanceCounter;
         float m_TargetCharacterHeight;
+        float m_lastDashTime = 0f;
 
         const float k_JumpGroundingPreventionTime = 0.2f;
         const float k_GroundCheckDistanceInAir = 0.07f;
@@ -298,6 +305,12 @@ namespace Unity.FPS.Gameplay
 
                 // converts move input to a worldspace vector based on our character's transform orientation
                 Vector3 worldspaceMoveInput = transform.TransformVector(m_InputHandler.GetMoveInput());
+
+                if (m_InputHandler.GetDashInputTriggered() && IsDashPossible)
+                {
+                    m_lastDashTime = Time.time;
+                    worldspaceMoveInput *= DashMultiplier;
+                }
 
                 // handle grounded movement
                 if (IsGrounded)
@@ -472,6 +485,12 @@ namespace Unity.FPS.Gameplay
 
             IsCrouching = crouched;
             return true;
+        }
+        
+        bool IsDashPossible {
+            get {
+                return Time.time - m_lastDashTime > DashCooldownTime;
+            }
         }
     }
 }
