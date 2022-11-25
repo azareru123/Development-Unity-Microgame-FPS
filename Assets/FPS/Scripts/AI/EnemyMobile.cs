@@ -69,9 +69,11 @@ namespace Unity.FPS.AI
             // Update animator speed parameter
             Animator.SetFloat(k_AnimMoveSpeedParameter, moveSpeed);
 
+            float meshAgentSpeed = m_EnemyController.NavMeshAgent.speed != 0 ? m_EnemyController.NavMeshAgent.speed : 1f;
+
             // changing the pitch of the movement sound depending on the movement speed
             m_AudioSource.pitch = Mathf.Lerp(PitchDistortionMovementSpeed.Min, PitchDistortionMovementSpeed.Max,
-                moveSpeed / m_EnemyController.NavMeshAgent.speed);
+                moveSpeed / meshAgentSpeed);
         }
 
         void UpdateAiStateTransitions()
