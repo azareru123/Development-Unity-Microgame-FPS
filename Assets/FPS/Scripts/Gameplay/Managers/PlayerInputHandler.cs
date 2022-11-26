@@ -20,9 +20,16 @@ namespace Unity.FPS.Gameplay
         [Tooltip("Used to flip the horizontal input axis")]
         public bool InvertXAxis = false;
 
+        [Tooltip("Limit pressed time")]
+        public float DoublePressTime = 0.2f;
+
         GameFlowManager m_GameFlowManager;
         PlayerCharacterController m_PlayerCharacterController;
         bool m_FireInputWasHeld;
+
+        private float m_LastHorizontalValue;
+        private float m_LastVerticalValue;
+        private float m_LastMoveTime;
 
         void Start()
         {
@@ -44,6 +51,33 @@ namespace Unity.FPS.Gameplay
         public bool CanProcessInput()
         {
             return Cursor.lockState == CursorLockMode.Locked && !m_GameFlowManager.GameIsEnding;
+        }
+
+
+        public bool GetDashInputTriggered()
+        {
+            if (CanProcessInput())
+            {
+                float currentHorizontalValue = Input.GetAxisRaw(GameConstants.k_AxisNameHorizontal);
+                float currentVerticalValue = Input.GetAxisRaw(GameConstants.k_AxisNameVertical);
+
+                // Move Key Pressed Once
+                if (currentHorizontalValue + currentVerticalValue != 0 && m_LastHorizontalValue + m_LastVerticalValue == 0)
+                {
+                    // Double Pressed
+                    if (Time.time - m_LastMoveTime < DoublePressTime)
+                    {
+                        return true;
+                    }
+
+                    m_LastMoveTime = Time.time;
+                }
+
+                m_LastHorizontalValue = currentHorizontalValue;
+                m_LastVerticalValue = currentVerticalValue;
+            }
+
+            return false;
         }
 
         public Vector3 GetMoveInput()

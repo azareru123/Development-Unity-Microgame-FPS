@@ -113,7 +113,7 @@ namespace Unity.FPS.Gameplay
             // Add starting weapons
             foreach (var weapon in StartingWeapons)
             {
-                AddWeapon(weapon);
+                if (weapon != null) AddWeapon(weapon);
             }
 
             SwitchWeapon(true);
