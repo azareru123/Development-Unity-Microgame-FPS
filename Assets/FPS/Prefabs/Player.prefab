@@ -416,8 +416,6 @@ MonoBehaviour:
   InvertYAxis: 0
   InvertXAxis: 0
   DoublePressTime: 0.2
-  DashWaitTime: 0.5
-  DashMoveValue: 5
 --- !u!114 &814417836257332542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +442,8 @@ MonoBehaviour:
   AccelerationSpeedInAir: 25
   SprintSpeedModifier: 1.5
   KillHeight: -50
+  DashCooldownTime: 0.5
+  DashMultiplier: 5
   RotationSpeed: 200
   AimingRotationMultiplier: 0.4
   JumpForce: 9

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2286238033834216811}
-  - component: {fileID: 373479027790524685}
+  - component: {fileID: -8079996762016907154}
   m_Layer: 0
   m_Name: SlowMotionManager
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &373479027790524685
+--- !u!114 &-8079996762016907154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d475d4dc6f4491429916c47b8076596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowDownFactor: 0.25
+  cooldown: 10
+  range: 2
+  now: 0
+  isSlowMotion: 0
