@@ -48,18 +48,11 @@ namespace Unity.FPS.Gameplay
             {
                 CompleteObjective(string.Empty, GetUpdatedCounterAmount(), "Objective complete : " + Title);
             }
-            else if (targetRemaining == 1)
-            {
-                string notificationText = NotificationEnemiesRemainingThreshold >= targetRemaining
-                    ? "One enemy left"
-                    : string.Empty;
-                UpdateObjective(string.Empty, GetUpdatedCounterAmount(), notificationText);
-            }
             else
             {
                 // create a notification text if needed, if it stays empty, the notification will not be created
                 string notificationText = NotificationEnemiesRemainingThreshold >= targetRemaining
-                    ? targetRemaining + " enemies to kill left"
+                    ? (targetRemaining == 1 ? "One" : targetRemaining) + " enemies to kill left"
                     : string.Empty;
 
                 UpdateObjective(string.Empty, GetUpdatedCounterAmount(), notificationText);
