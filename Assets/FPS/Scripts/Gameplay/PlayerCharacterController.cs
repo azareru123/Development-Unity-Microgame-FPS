@@ -43,6 +43,12 @@ namespace Unity.FPS.Gameplay
 
         [Tooltip("Height at which the player dies instantly when falling off the map")]
         public float KillHeight = -50f;
+        
+        [Tooltip("Cooldown time to trigger dash again")]
+        public float DashCooldownTime = 0.5f;
+        
+        [Tooltip("Move multiplier when dashing")]
+        public float DashMultiplier = 5.0f;
 
         [Header("Rotation")] [Tooltip("Rotation speed for moving the camera")]
         public float RotationSpeed = 200f;
@@ -95,12 +101,6 @@ namespace Unity.FPS.Gameplay
 
         [Tooltip("Damage recieved when falling at the maximum speed")]
         public float FallDamageAtMaxSpeed = 50f;
-        
-        [Tooltip("Cooldown time to trigger dash again")]
-        public float DashCooldownTime = 0.5f;
-        
-        [Tooltip("Move multiplier when dashing")]
-        public float DashMultiplier = 5.0f;
 
         public UnityAction<bool> OnStanceChanged;
 
