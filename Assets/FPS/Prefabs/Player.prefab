@@ -415,6 +415,9 @@ MonoBehaviour:
   TriggerAxisThreshold: 0.4
   InvertYAxis: 0
   InvertXAxis: 0
+  DoublePressTime: 0.2
+  DashWaitTime: 0.5
+  DashMoveValue: 5
 --- !u!114 &814417836257332542
 MonoBehaviour:
   m_ObjectHideFlags: 0
