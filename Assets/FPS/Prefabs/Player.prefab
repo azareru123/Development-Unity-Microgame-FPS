@@ -443,7 +443,7 @@ MonoBehaviour:
   SprintSpeedModifier: 1.5
   KillHeight: -50
   DashCooldownTime: 0.5
-  DashMultiplier: 5
+  DashMultiplier: 15
   RotationSpeed: 200
   AimingRotationMultiplier: 0.4
   JumpForce: 9
