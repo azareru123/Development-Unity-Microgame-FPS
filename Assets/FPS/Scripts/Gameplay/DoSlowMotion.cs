@@ -32,7 +32,6 @@ public class DoSlowMotion : MonoBehaviour
                 now = 0;
             }
         }
-        Debug.Log(cooldown);
     }
 
     public void DoSlowmotion(){
