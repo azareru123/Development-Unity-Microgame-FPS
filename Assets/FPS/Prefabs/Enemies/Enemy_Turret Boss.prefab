@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2015434656898269652, guid: e29d43f43cc5d82499dd9926e01847d3,
         type: 3}
       propertyPath: m_Name
-      value: Enemy_Turret
+      value: Enemy_Turret Boss
       objectReference: {fileID: 0}
     - target: {fileID: 2015434656898269656, guid: e29d43f43cc5d82499dd9926e01847d3,
         type: 3}
@@ -82,15 +82,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2104015986810675393, guid: e29d43f43cc5d82499dd9926e01847d3,
+        type: 3}
+      propertyPath: BulletsPerShot
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2104015986810675393, guid: e29d43f43cc5d82499dd9926e01847d3,
+        type: 3}
+      propertyPath: ProjectilePrefab
+      value: 
+      objectReference: {fileID: 8924682559891268397, guid: c861f772c1a248546afb91114616506c,
+        type: 3}
+    - target: {fileID: 2104015986810675393, guid: e29d43f43cc5d82499dd9926e01847d3,
+        type: 3}
+      propertyPath: BulletSpreadAngle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2104015986810675393, guid: e29d43f43cc5d82499dd9926e01847d3,
+        type: 3}
+      propertyPath: DelayBetweenShots
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 2774235613882044843, guid: e29d43f43cc5d82499dd9926e01847d3,
         type: 3}
       propertyPath: AttackRange
-      value: 110
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2774235613882044843, guid: e29d43f43cc5d82499dd9926e01847d3,
         type: 3}
       propertyPath: DetectionRange
-      value: 100
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774235613882044843, guid: e29d43f43cc5d82499dd9926e01847d3,
+        type: 3}
+      propertyPath: KnownTargetTimeout
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4234830436940505133, guid: e29d43f43cc5d82499dd9926e01847d3,
         type: 3}
@@ -100,7 +126,32 @@ PrefabInstance:
     - target: {fileID: 6370966072896210225, guid: e29d43f43cc5d82499dd9926e01847d3,
         type: 3}
       propertyPath: MaxHealth
-      value: 3000
+      value: 2000
       objectReference: {fileID: 0}
+    - target: {fileID: 7886326314635015769, guid: e29d43f43cc5d82499dd9926e01847d3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45a930460fd621b4e8dc64bc993a04c0, type: 2}
+    - target: {fileID: 7886326314635015769, guid: e29d43f43cc5d82499dd9926e01847d3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e605d2e398f98f648893736a8a8e9f44, type: 2}
+    - target: {fileID: 7886326314635015769, guid: e29d43f43cc5d82499dd9926e01847d3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd9a580ad32fb514ba692c39fecf66f3, type: 2}
+    - target: {fileID: 7886326314635015773, guid: e29d43f43cc5d82499dd9926e01847d3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45a930460fd621b4e8dc64bc993a04c0, type: 2}
+    - target: {fileID: 7886326314635015775, guid: e29d43f43cc5d82499dd9926e01847d3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45a930460fd621b4e8dc64bc993a04c0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e29d43f43cc5d82499dd9926e01847d3, type: 3}
